@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上傳影片</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📤 上傳影片</h1>
+
+        <!-- 顯示消息 -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- 上傳表單 -->
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="upload-form">
+            {{ form.hidden_tag() }}
+
+            <label for="category">{{ form.category.label }}</label>
+            {{ form.category }}
+            <br>
+
+            <label for="video">{{ form.video.label }}</label>
+            {{ form.video }}
+            <br>
+
+            <label for="tags">{{ form.tags.label }}</label>
+            {{ form.tags }}
+            <br>
+
+            {{ form.submit }}
+        </form>
+
+        <br>
+        <a href="/">⬅️ 返回首頁</a>
+    </div>
+</body>
+</html>

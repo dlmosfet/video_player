@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播放影片</title>
+    <style>
+        /* 改善播放器的外觀 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px; /* 設定最大寬度 */
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        /* 按鈕樣式 */
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #0066cc;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #004b8f;
+        }
+
+        /* 加入響應式設計，確保在手機上良好顯示 */
+        @media (max-width: 768px) {
+            video {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 播放影片: {{ filename }}</h1>
+
+        <!-- Video Player -->
+        <video controls autoplay muted>
+            {% for ext in ['mp4', 'avi', 'mkv'] %}
+            <source src="{{ url_for('video', category=category, filename=filename.split('.')[0] + '.' + ext) }}" type="video/{{ ext }}">
+            {% endfor %}
+            您的瀏覽器不支援影片播放。
+        </video>
+
+        <br><br>
+        <!-- 返回影片列表 -->
+        <a href="/">⬅️ 返回影片列表</a>
+    </div>
+</body>
+</html>
