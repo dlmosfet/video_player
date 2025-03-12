@@ -1,5 +1,5 @@
 # video_player
--所需的 Python 庫：
+- 所需的 Python 庫：
 Flask：Web 框架。
 Werkzeug：一個用於處理安全檔名的工具庫。
 Flask-WTF：提供 WTForms 與 Flask 的集成，用於處理表單。
