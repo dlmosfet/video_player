@@ -1,9 +1,17 @@
-# video_player
-所需的 Python 庫：
-  Flask：Web 框架。
-  Werkzeug：一個用於處理安全檔名的工具庫。
-  Flask-WTF：提供 WTForms 與 Flask 的集成，用於處理表單。
-  WTForms：用於創建網頁表單的庫。
-  FFmpeg：用於生成影片縮圖（應該在系統中安裝，而不是作為 Python 包安裝）。
+# Flask Video Player
 
-html5+Css+python 
+這是一個基於 Flask 的影片瀏覽和播放網站，允許用戶上傳影片並觀看影片內容。該應用會自動生成影片縮圖，並提供簡單的影片播放功能。
+
+## 技術棧
+
+- **Flask**：用於構建後端 API 和前端渲染
+- **Werkzeug**：用於安全處理檔名
+- **Flask-WTF 和 WTForms**：處理影片上傳的表單
+- **FFmpeg**：用於生成影片縮圖
+
+## 安裝依賴
+
+首先，確保安裝了 Python 以及必要的庫。可以使用以下命令安裝 Python 依賴：
+
+```bash
+pip install Flask Werkzeug Flask-WTF WTForms
