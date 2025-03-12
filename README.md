@@ -15,3 +15,16 @@
 
 ```bash
 pip install Flask Werkzeug Flask-WTF WTForms
+
+## 文件結構
+flask-video-player/
+│
+├── app.py              # Flask 應用主程式
+├── static/             # 用於儲存上傳的影片和縮圖
+│   └── uploads/
+├── templates/          # 用於存放 HTML 模板
+│   ├── upload.html
+│   └── play_video.html
+├── requirements.txt    # 依賴項列表
+└── README.md           # 這個文件
+
