@@ -1,4 +1,4 @@
-# Flask Video Player
+# Flask Video Player（開發中）
 
 這是一個基於 Flask 的影片瀏覽和播放網站，允許用戶上傳影片並觀看影片內容。該應用會自動生成影片縮圖，並提供簡單的影片播放功能。
 
